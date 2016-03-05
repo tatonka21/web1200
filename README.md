@@ -16,4 +16,7 @@ $ setup.py
 ```
 
 In a production environment you can use the wsgi file to run the script throught an Apache server.
-The built in server from Flask is not recomended for production environment use.
+The built in server from Flask is not recommended for use in a production environment.
+
+To update website run refresh.py or add refresh.py to cron.
+ 
