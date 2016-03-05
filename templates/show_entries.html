@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    {% for group in groups %}
+        <h2>{{ group.title }}</h2>
+        <p>{{ group.text|safe }}</p>
+        <ul class=entries>
+        {% for link in links %}
+            {% if link.linkgroupid == group.id %}
+                <p>
+                    {% if link.link %}
+                        <a href='{{ link.link }}'>{{ link.title }}</a>
+                    {% else %}
+                        {{ link.link }}
+                    {% endif %}
+                {% if link.description %}
+                    <small>{{ link.description }}</small>
+                {% endif %}
+                </p>
+            {% endif %}
+        {% endfor %}
+        </ul>
+        <p>.</p>
+    {% else %}
+        <em>Nothing found in database</em>
+    {% endfor %}
+
+{% endblock %}
