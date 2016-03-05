@@ -9,7 +9,6 @@ from scraper import get_repositories, get_odoo_projects
 
 
 app = Flask(__name__)
-PRODUCTION = True
 
 # Load default config and override config from an environment variable
 app.config.update(dict(
@@ -72,15 +71,8 @@ def show_entries():
     db = connect_db()
     groups = db.execute('select id, title, text from linkgroup order by id asc').fetchall()
     links = db.execute('select linkgroupid, id, title, link, description from links order by id asc').fetchall()
-    page = render_template('show_entries.html', groups=groups, links=links)
-    if PRODUCTION:
-        if page:
-            f = open(os.path.join(app.root_path, 'public/index.html'), 'w')
-            f.write(page)
-    return page
-
+    return render_template('show_entries.html', groups=groups, links=links)
 
 
 if __name__ == '__main__':
-
     app.run()
