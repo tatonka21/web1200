@@ -65,7 +65,11 @@ def get_odoo_projects():
     soup = BeautifulSoup(html_doc, 'html.parser')
     projects = []
 
-    for tag in soup.find_all('span', class_="loempia_card_thumbnail_title"):
+    search_tag = "loempia_panel_short_desc"
+    tags = soup.find_all('p', class_=search_tag)
+    if not tags:
+        print "Tag %s not found on Odoo projects website" % search_tag
+    for tag in tags:
         title = tag.text.strip()
         link = tag.parent.parent['href']
         description = tag.parent.parent.find_all('p')[0].text.strip()

@@ -1,4 +1,5 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/python
+#  -*- coding: utf-8 -*-
 #
 #    web1200 refresh.py
 #    Copyright (C) 2016 March 
