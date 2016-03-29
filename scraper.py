@@ -27,9 +27,8 @@ GITHUB_URL = 'https://api.github.com'
 VALID_TYPES = ['all', 'owner', 'public', 'private', 'member']
 EXCLUDE_REPOS = ['project_category', '1200wd.github.io', 'odoo_toolbox_1200']
 
-ODOOAPPS_URL = 'https://www.odoo.com/apps/modules/8.0/'
-ODOO1200APPS_URL = 'https://www.odoo.com/apps/modules/browse?author=1200%20Web%20Development'
-
+ODOOBASE_URL = 'https://www.odoo.com'
+ODOO1200APPS_URL = ODOOBASE_URL + '/apps/modules/browse?author=1200%20Web%20Development'
 
 
 def do_request(url, method='', header=None):
@@ -71,7 +70,7 @@ def get_odoo_projects():
         print "Tag %s not found on Odoo projects website" % search_tag
     for tag in tags:
         title = tag.text.strip()
-        link = tag.parent.parent['href']
+        link = ODOOBASE_URL + tag.parent.parent['href']
         description = tag.parent.parent.find_all('p')[0].text.strip()
 
         projects.append({
