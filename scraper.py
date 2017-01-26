@@ -25,7 +25,7 @@ from bs4 import BeautifulSoup
 
 GITHUB_URL = 'https://api.github.com'
 VALID_TYPES = ['all', 'owner', 'public', 'private', 'member']
-EXCLUDE_REPOS = ['project_category', '1200wd.github.io', 'odoo_toolbox_1200']
+EXCLUDE_REPOS = ['project_category', '1200wd.github.io', 'odoo_toolbox_1200', '1200wd_addons']
 
 ODOOBASE_URL = 'https://www.odoo.com'
 ODOO1200APPS_URL = ODOOBASE_URL + '/apps/modules/browse?author=1200%20Web%20Development'
