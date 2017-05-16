@@ -25,11 +25,10 @@ from bs4 import BeautifulSoup
 
 GITHUB_URL = 'https://api.github.com'
 VALID_TYPES = ['all', 'owner', 'public', 'private', 'member']
-EXCLUDE_REPOS = ['project_category', '1200wd.github.io', 'odoo_toolbox_1200']
+EXCLUDE_REPOS = ['project_category', '1200wd.github.io', 'odoo_toolbox_1200', 'ListLongNew']
 
 ODOOAPPS_URL = 'https://www.odoo.com/apps/modules/8.0/'
 ODOO1200APPS_URL = 'https://www.odoo.com/apps/modules/browse?author=1200%20Web%20Development'
-
 
 
 def do_request(url, method='', header=None):
@@ -37,7 +36,8 @@ def do_request(url, method='', header=None):
     r = requests.get(request_url, headers=header)
 
     if not r or not r.status_code==200:
-        raise RuntimeError("Connection error when connecting to %s. Response: %s" % (url, getattr(r, 'text', 'Unknown Response')))
+        raise RuntimeError("Connection error when connecting to %s. Response: %s" %
+                           (url, getattr(r, 'text', 'Unknown Response')))
     else:
         return r
 
@@ -79,3 +79,5 @@ def get_odoo_projects():
         })
 
     return projects
+
+
