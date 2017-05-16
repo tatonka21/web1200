@@ -3,7 +3,7 @@ Our Odoo Modules
 ================
 
 :date: 2017-05-16 22:39
-:modified: 2017-05-16 22:39
+:modified: 2017-05-16 22:55:08
 :tags: odoo, python
 :category: Odoo
 :slug: our-odoo-modules

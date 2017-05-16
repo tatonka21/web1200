@@ -19,6 +19,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+import time
 import requests
 from bs4 import BeautifulSoup
 
@@ -94,7 +95,7 @@ Our Github Repositories
 =======================
 
 :date: 2017-05-16 22:06
-:modified: 2017-05-16 22:06
+:modified: """ + time.strftime("%Y-%m-%d %H:%M") + """
 :tags: github, python, bitcoin, bitcoinlib
 :category: Github
 :slug: our-github-projects
@@ -120,7 +121,7 @@ Our Odoo Modules
 ================
 
 :date: 2017-05-16 22:39
-:modified: 2017-05-16 22:39
+:modified: """ + time.strftime("%Y-%m-%d %H:%M") + """
 :tags: odoo, python
 :category: Odoo
 :slug: our-odoo-modules
