@@ -20,8 +20,9 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('1200 Webdevelopment', 'http://1200wd.com'),
-         ('Email', 'mailto:info@1200wd.com'),
+LINKS = (('1200 BV, van Slingelandtplein 13a, 1051DD Amsterdam, The Netherlands', 'http://1200wd.com'),
+         ('Kamer van Koophandel Amsterdam 34293142, VAT NL818971733B01', '#'),
+         ('info@1200wd.com', 'mailto:info@1200wd.com'),
          ('12ooWd8Xag7hsgP9PBPnmyGe36VeUrpMSH', 'https://blockchain.info/address/12ooWd8Xag7hsgP9PBPnmyGe36VeUrpMSH'),
          )
 
