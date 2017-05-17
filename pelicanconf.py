@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = u'1200 BV'
 SITENAME = u'1200 Web Development'
 SITEURL = ''
+SITESUBTITLE = "<img src='http://1200wd.com/images/drawing.png' align='right' valign='top'>"
 
 PATH = 'content'
 
