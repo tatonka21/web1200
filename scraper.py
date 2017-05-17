@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-#    web1200 github.py
-#    Copyright (C) 2016 March 
+#    web1200 - Github and Odoo project scraper
+#    Copyright (C) 2017 May
 #    1200 Web Development
 #    http://1200wd.com/
 #
@@ -20,11 +20,14 @@
 #
 
 import time
+import os
 import requests
 from bs4 import BeautifulSoup
 
 # Website settings
-DEFAULT_DOCDIR = '/home/lennart/code/web1200/content/'
+DEFAULT_DOCDIR = '/home/lennart/code/web1200/content/generated/'
+if not os.path.exists(DEFAULT_DOCDIR):
+    os.makedirs(DEFAULT_DOCDIR)
 
 # Scrape Github projects settings
 GITHUB_URL = 'https://api.github.com'
