@@ -38,4 +38,4 @@ DEFAULT_PAGINATION = 10
 
 TRANSLATE_MENU = True
 
-THEME = "/home/lennart/code/web1200/themes/pelican-blueidea"
+THEME = "themes/pelican-blueidea"
