@@ -93,6 +93,31 @@ def get_odoo_projects():
 
 
 if __name__ == '__main__':
+    odoo_rst = """
+Our Odoo Modules
+================
+
+:date: 2017-05-16 22:00
+:modified: """ + time.strftime("%Y-%m-%d %H:%M") + """
+:tags: odoo, python
+:category: Odoo
+:slug: our-odoo-modules
+:authors: Lennart Jongeneel
+:summary: Overview of our Odoo modules
+:language: nl
+
+"""
+    projects = get_odoo_projects()
+    count_odoo = 0
+    for project in projects:
+        odoo_rst += "* `%s <%s>`_ - %s\n" % (project['title'], project['link'], project['description'])
+        count_odoo += 1
+
+    if count_odoo:
+        with open(DEFAULT_DOCDIR + 'odoo.rst', 'w') as f:
+            f.write(odoo_rst)
+        print("%d odoo projects imported" % count_odoo)
+
     repo_rst = """
 Our Github Repositories
 =======================
@@ -118,28 +143,3 @@ Our Github Repositories
         with open(DEFAULT_DOCDIR + 'github.rst', 'w') as f:
             f.write(repo_rst)
         print("%d links imported" % count_repo)
-
-    odoo_rst = """
-Our Odoo Modules
-================
-
-:date: 2017-05-16 22:39
-:modified: """ + time.strftime("%Y-%m-%d %H:%M") + """
-:tags: odoo, python
-:category: Odoo
-:slug: our-odoo-modules
-:authors: Lennart Jongeneel
-:summary: Overview of our Odoo modules
-:language: nl
-
-"""
-    projects = get_odoo_projects()
-    count_odoo = 0
-    for project in projects:
-        odoo_rst += "* `%s <%s>`_ - %s\n" % (project['title'], project['link'], project['description'])
-        count_odoo += 1
-
-    if count_odoo:
-        with open(DEFAULT_DOCDIR + 'odoo.rst', 'w') as f:
-            f.write(odoo_rst)
-        print("%d odoo projects imported" % count_odoo)

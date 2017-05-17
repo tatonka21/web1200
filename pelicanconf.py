@@ -35,3 +35,5 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 
 TRANSLATE_MENU = True
+
+THEME = "/home/lennart/code/web1200/themes/pelican-blueidea"
