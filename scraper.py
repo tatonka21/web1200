@@ -19,24 +19,10 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+from config import *
 import time
-import os
 import requests
 from bs4 import BeautifulSoup
-
-# Website settings
-DEFAULT_DOCDIR = '/home/lennart/code/web1200/content/generated/'
-if not os.path.exists(DEFAULT_DOCDIR):
-    os.makedirs(DEFAULT_DOCDIR)
-
-# Scrape Github projects settings
-GITHUB_URL = 'https://api.github.com'
-VALID_TYPES = ['all', 'owner', 'public', 'private', 'member']
-EXCLUDE_REPOS = ['project_category', '1200wd.github.io', 'odoo_toolbox_1200', '1200wd_addons', 'ListLongNew']
-
-# Scrape Odoo store projects settings
-ODOOBASE_URL = 'https://www.odoo.com'
-ODOO1200APPS_URL = ODOOBASE_URL + '/apps/modules/browse?author=1200%20Web%20Development'
 
 
 def do_request(url, method='', header=None):
