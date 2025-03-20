@@ -21,13 +21,13 @@
 
 from config import *
 import time
-import requests
 from bs4 import BeautifulSoup
+from security import safe_requests
 
 
 def do_request(url, method='', header=None):
     request_url = url + method
-    r = requests.get(request_url, headers=header)
+    r = safe_requests.get(request_url, headers=header)
 
     if not r or not r.status_code==200:
         raise RuntimeError("Connection error when connecting to %s. Response: %s" % (url, getattr(r, 'text', 'Unknown Response')))
